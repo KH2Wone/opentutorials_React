@@ -1,0 +1,1 @@
+{"version":3,"sources":["webpack://src/index.css","webpack://src/App.css"],"names":[],"mappings":"AAAA,KACE,uBACF,CCFA,KACE,cAAe,CACf,iBAAkB,CAClB,gBACF","file":"main.0a1be312.chunk.css","sourcesContent":["body {\n  background-color: bisque;\n}",".App {\n  font-size: 50px;\n  text-align: center;\n  margin-top: 250px;\n}"]}
