@@ -11,7 +11,14 @@ class TOC extends Component {
         // }
         let lists = data.map(v => {
             return (
-                <li key={v.id}><a href={`/content/${v.id}`}>{v.title}</a></li>
+                <li key={v.id}>
+                    <a href={`/content/${v.id}`} onClick={function(e) {
+                        e.preventDefault();
+                        this.props.onChangePage();
+                    }.bind(this)}>
+                        {v.title}
+                    </a>
+                </li>
             )
         })
         return (
