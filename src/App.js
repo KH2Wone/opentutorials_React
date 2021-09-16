@@ -20,7 +20,6 @@ class App extends Component {
     }
   }
   render() {
-    console.log('App render');
     let _title, _desc = null;
     if(this.state.mode === 'welcome') {
       _title = this.state.welcome.title;
@@ -42,7 +41,10 @@ class App extends Component {
         <Subject title={this.state.subject.title} sub={this.state.subject.sub} onChangePage = {function() {
           this.setState({mode: 'welcome'});
         }.bind(this)}></Subject>
-        <TOC data={this.state.contents} onChangePage = {function() {this.setState({mode: 'read'})}.bind(this)}></TOC>
+        <TOC data={this.state.contents} onChangePage = {function(id) {this.setState({
+          mode: 'read',
+          selected_content_id: Number(id)
+        })}.bind(this)}></TOC>
         <Content title={_title} desc={_desc}></Content>
       </div>
     );
