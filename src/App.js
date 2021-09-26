@@ -12,7 +12,7 @@ class App extends Component {
     super(props);
     this.max_content_id = 3;
     this.state = {
-      mode: 'create',
+      mode: 'welcome',
       selected_content_id: 2,
       subject: {title: 'WEB', sub: 'world wide web!'},
       welcome:{title:'welcome', desc: 'hello, React!'},
@@ -29,7 +29,6 @@ class App extends Component {
       var data = this.state.contents[i];
       if(data.id === this.state.selected_content_id) {
         return data;
-        break;
       }
       i++;
     }
@@ -88,9 +87,27 @@ class App extends Component {
           selected_content_id: Number(id)
         })}.bind(this)}></TOC>
         <Control onChangeMode={function(_mode) {
-          this.setState({
-            mode: _mode
-          });
+          if(_mode === 'delete') {
+            if(window.confirm('정말 삭제하시겠습니까?')) {
+              var _contents = Array.from(this.state.contents);
+              let i=0;
+              while(i<this.state.contents.length) {
+                if(_contents[i].id === this.state.selected_content_id) {
+                  _contents.splice(i, 1);
+                }
+                i++;
+              }
+              this.setState({
+                mode: 'welcome',
+                contents: _contents
+              });
+              alert('삭제 되었습니다.');
+            }
+          } else {
+            this.setState({
+              mode: _mode
+            });
+          }
         }.bind(this)}></Control>
         {this.getContent()}
       </div>
