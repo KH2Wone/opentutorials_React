@@ -24,13 +24,9 @@ class App extends Component {
     }
   }
   getReadContent() {
-    let i=0;
-    while (i < this.state.contents.length) {
-      var data = this.state.contents[i];
-      if(data.id === this.state.selected_content_id) {
-        return data;
-      }
-      i++;
+    for(let i=0; i<this.state.contents.length; i++) {
+      let data = this.state.contents[i];
+      if(data.id === this.state.selected_content_id) return data;
     }
   }
   getContent() {
@@ -59,13 +55,11 @@ class App extends Component {
       _article = <UpdateContent data={_content} onSubmit={
         function(_id, _title, _desc) {
         var _contents = Array.from(this.state.contents);
-        let i = 0;
-        while(i < _contents.length) {
+        for(let i=0; i<_contents.length; i++) {
           if(_contents[i].id === _id) {
             _contents[i] = {id:_id, title:_title, desc:_desc};
             break;
           }
-          i++;
         }
         this.setState({
           contents: _contents,
@@ -90,12 +84,10 @@ class App extends Component {
           if(_mode === 'delete') {
             if(window.confirm('정말 삭제하시겠습니까?')) {
               var _contents = Array.from(this.state.contents);
-              let i=0;
-              while(i<this.state.contents.length) {
+              for(let i=0; i<this.state.contents.length; i++) {
                 if(_contents[i].id === this.state.selected_content_id) {
                   _contents.splice(i, 1);
                 }
-                i++;
               }
               this.setState({
                 mode: 'welcome',
