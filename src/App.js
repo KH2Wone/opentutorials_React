@@ -76,10 +76,6 @@ class App extends Component {
         <Subject title={this.state.subject.title} sub={this.state.subject.sub} onChangePage = {function() {
           this.setState({mode: 'welcome'});
         }.bind(this)}></Subject>
-        <TOC data={this.state.contents} onChangePage = {function(id) {this.setState({
-          mode: 'read',
-          selected_content_id: Number(id)
-        })}.bind(this)}></TOC>
         <Control onChangeMode={function(_mode) {
           if(_mode === 'delete') {
             if(window.confirm('정말 삭제하시겠습니까?')) {
@@ -101,6 +97,10 @@ class App extends Component {
             });
           }
         }.bind(this)}></Control>
+        <TOC data={this.state.contents} onChangePage = {function(id) {this.setState({
+          mode: 'read',
+          selected_content_id: Number(id)
+        })}.bind(this)}></TOC>
         {this.getContent()}
       </div>
     );
