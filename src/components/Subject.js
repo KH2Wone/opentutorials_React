@@ -8,7 +8,7 @@ class Subject extends Component {
                 e.preventDefault();
                 this.props.onChangePage();
             }.bind(this)}>{this.props.title}</a></h1>
-            {this.props.sub}
+            <p>{this.props.sub}</p>
         </header>
         );
     }
