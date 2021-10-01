@@ -83,6 +83,7 @@ class App extends Component {
               for(let i=0; i<this.state.contents.length; i++) {
                 if(_contents[i].id === this.state.selected_content_id) {
                   _contents.splice(i, 1);
+                  break;
                 }
               }
               this.setState({
