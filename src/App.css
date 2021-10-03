@@ -8,7 +8,7 @@ body {
 }
 
 header {
-    padding: 20px 10px;
+    padding-top: 3%;
     text-align: center;
     color: #9D9DA3;
 }
@@ -22,6 +22,15 @@ header h1 {
 header p {
     color: #9D9DA3;
     font-size: 2rem;
+}
+
+header::after { /*header bottom hr*/
+    content: '';
+    display: block;
+    border-radius: 50%;
+    width: 85%;
+    margin: 4% auto;
+    border-bottom: 4px solid #F1D1CD;
 }
 
 /* || control */
@@ -47,4 +56,26 @@ header p {
 .controls li a,
 .controls li > input[type=image] {
     color: transparent;
+}
+
+
+/* || contents list */
+nav > ul {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.list_content {
+    padding: 8px 13px;
+    margin: 3px 5px;
+    background: #fff;
+    border: 2px solid #F1D1CD;
+    border-radius: 50px;
+}
+
+.list_content a {
+    color: #f3bbb4;
+    width: 100%;
 }
