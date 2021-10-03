@@ -11,7 +11,7 @@ class TOC extends Component {
         // }
         let lists = data.map(v => {
             return (
-                <li key={v.id}>
+                <li key={v.id} className="list_content">
                     <a href={`/content/${v.id}`} data-id={v.id} onClick={function(e) {
                         e.preventDefault();
                         this.props.onChangePage(e.target.dataset.id);
