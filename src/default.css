@@ -92,8 +92,7 @@ video {
     outline: 0;
     font-size: 100%;
     vertical-align: baseline;
-    background: transparent;
-    line-height: 1;
+    background: transparent;line-height: 1;
 }
 
 body, html {
@@ -106,7 +105,10 @@ body, html {
 
 html {font-size: 62.5%;}
 
-body {font-size: 1.6rem;}
+body {
+    font-size: 1.6rem;
+    word-break: keep-all;
+}
 
 article,
 aside,
