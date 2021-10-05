@@ -1,36 +1,28 @@
 body {
-    background-color: #F8F1E5;
+    background-color: #EDEDED;
+    color: #171717;
 }
 
 .App {
     width: 100%;
     height: 100%;
+    padding-bottom: 150px;
 }
 
 header {
     padding-top: 3%;
     text-align: center;
-    color: #9D9DA3;
 }
 
 header h1 {
     font-weight: 900;
     font-size: 7rem;
-    color: #606069;
+    color: #444444;
 }
 
 header p {
-    color: #9D9DA3;
+    color: #222831;
     font-size: 2rem;
-}
-
-header::after { /*header bottom hr*/
-    content: '';
-    display: block;
-    border-radius: 50%;
-    width: 85%;
-    margin: 4% auto;
-    border-bottom: 4px solid #F1D1CD;
 }
 
 /* || control */
@@ -58,24 +50,61 @@ header::after { /*header bottom hr*/
     color: transparent;
 }
 
-
 /* || contents list */
 nav > ul {
     width: 100%;
     display: flex;
     justify-content: center;
     flex-wrap: wrap;
+    margin-top: 26px;
+}
+
+nav > ul::after { /*header bottom hr*/
+    content: '';
+    display: block;
+    width: 85%;
+    margin: 4% auto 0px;
+    border-bottom: 1px solid #30475E;
 }
 
 .list_content {
     padding: 8px 13px;
     margin: 3px 5px;
     background: #fff;
-    border: 2px solid #F1D1CD;
+    border: 2px solid #DA0037;
     border-radius: 50px;
 }
 
 .list_content a {
-    color: #f3bbb4;
+    color: #DA0037;
     width: 100%;
+}
+
+/* active button */
+.list_content.on {
+    background: #DA0037;
+}
+
+.list_content.on > a {
+    color: #fff;
+}
+
+/* || article - title, desc */
+article {
+    width: 85%;
+    margin: 0px auto;
+    padding-top: 50px;
+    box-sizing: border-box;
+}
+
+article > h2 {
+    font-size: 3.5rem;
+    color: #fff;
+    margin-bottom: 20px;
+    color: #444444;
+}
+
+article > p {
+    text-indent: 3px;
+    line-height: 1.8;
 }
