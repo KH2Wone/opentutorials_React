@@ -21,7 +21,6 @@ header h1 {
 }
 
 header p {
-    color: #222831;
     font-size: 2rem;
 }
 
@@ -64,7 +63,8 @@ nav > ul::after { /*header bottom hr*/
     display: block;
     width: 85%;
     margin: 4% auto 0px;
-    border-bottom: 1px solid #30475E;
+    border-bottom: 2px solid #fff;
+    box-shadow: 2px 2px 7px rgba(0,0,0,.2);
 }
 
 .list_content {
@@ -89,7 +89,7 @@ nav > ul::after { /*header bottom hr*/
     color: #fff;
 }
 
-/* || article - title, desc */
+/* || article */
 article {
     width: 85%;
     margin: 0px auto;
@@ -99,12 +99,50 @@ article {
 
 article > h2 {
     font-size: 3.5rem;
-    color: #fff;
     margin-bottom: 20px;
     color: #444444;
 }
 
-article > p {
+/* || ReadContent article - title, desc */
+.read_article > p {
     text-indent: 3px;
     line-height: 1.8;
+}
+
+/* || CreateContent & UpdateContent */
+.fix_article form > p input[type=text],
+.fix_article form > p textarea {
+    /* border-bottom: 1px solid #fff; */
+    box-shadow: 2px 2px 7px rgba(0,0,0,.1);
+    border-radius: 30px;
+    width: 100%;
+    padding: 20px;
+    box-sizing: border-box;
+    background: #fff;
+}
+
+.fix_article form > p input[type=text]::placeholder,
+.fix_article form > p textarea::placeholder,
+.fix_article form > p input[type=submit] {
+    color: #DA0037;
+    display: block;
+}
+
+.fix_article form > p input[type=text] {
+    height: 40px;
+    margin-bottom: 2%;
+}
+
+.fix_article form > p textarea {
+    height: 300px;
+}
+
+/* submit button */
+.fix_article form > p input[type=submit] {
+    background-color: #DA0037;
+    border: 2px dotted #fff;
+    border-radius: 30px;
+    color: #fff;
+    padding: 1.7% 10%;
+    margin: 40px auto 0px;
 }
