@@ -15,7 +15,7 @@ class UpdateContent extends Component {
     }
     render() {
         return (
-            <article>
+            <article className="fix_article">
                 <h2>Update</h2>
                 <form action="/create_process" method="post" onSubmit={
                     function(e) {
@@ -38,7 +38,7 @@ class UpdateContent extends Component {
                     <p>
                         <textarea name="desc" placeholder="description" value={this.state.desc} onChange={this.inputFormHandler}></textarea>
                     </p>
-                    <p><input type="submit" /></p>
+                    <p><input type="submit" value="UPDATE THIS!" /></p>
                 </form>
             </article>
         );

@@ -3,7 +3,7 @@ import React, {Component} from 'react';
 class CreateContent extends Component {
     render() {
         return (
-            <article>
+            <article className="fix_article">
                 <h2>Create</h2>
                 <form action="/create_process" method="post" onSubmit={
                     function(e) {
@@ -18,7 +18,7 @@ class CreateContent extends Component {
                     <p>
                         <textarea name="desc" placeholder="description"></textarea>
                     </p>
-                    <p><input type="submit" /></p>
+                    <p><input type="submit" value="CREATE THIS!" /></p>
                 </form>
             </article>
         );
