@@ -42,13 +42,20 @@ class App extends Component {
       _article = <CreateContent onSubmit={function(_title, _desc) {
         this.max_content_id = this.max_content_id+1;
         var _contents = Array.from(this.state.contents);
-        _contents.push({id:this.max_content_id, title:_title, desc:_desc});
-
-        this.setState({
-          contents: _contents,
-          mode: 'read',
-          selected_content_id: this.max_content_id
-        });
+        _contents.push({id:this.max_content_id, title:_title, desc:_desc}
+        );
+        if(_title==='' || _desc==='') {
+          alert('필수사항인 제목 혹은 설명이 입력되지 않았습니다.');
+          this.setState({
+            mode: 'create'
+          });
+        } else {
+          this.setState({
+            contents: _contents,
+            mode: 'read',
+            selected_content_id: this.max_content_id
+          });
+        }
       }.bind(this)}></CreateContent>;
     } else if (this.state.mode === 'update') {
       _content = this.getReadContent();
