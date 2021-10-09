@@ -198,7 +198,7 @@ img{vertical-align: top;}
 ul, ol{list-style: none;}
 a{text-decoration: none; color: inherit;}
 
-button, input[type=submit], input[type=button] {
+button, input, textarea {
     background: inherit;
     border: none;
     box-shadow: none;
@@ -206,3 +206,5 @@ button, input[type=submit], input[type=button] {
     padding: 0;
     cursor: pointer;
 }
+
+textarea {resize: none;}
