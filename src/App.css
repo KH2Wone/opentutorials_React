@@ -10,7 +10,7 @@ body {
 }
 
 header {
-    padding-top: 3%;
+    padding-top: 5%;
     text-align: center;
 }
 
@@ -58,11 +58,11 @@ nav > ul {
     margin-top: 26px;
 }
 
-nav > ul::after { /*header bottom hr*/
+nav::after { /*header bottom hr*/
     content: '';
     display: block;
     width: 85%;
-    margin: 4% auto 0px;
+    margin: 3% auto 0px;
     border-bottom: 2px solid #fff;
     box-shadow: 2px 2px 7px rgba(0,0,0,.2);
 }
