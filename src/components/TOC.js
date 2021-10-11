@@ -1,20 +1,22 @@
 import React, {Component} from 'react';
 
 class TOC extends Component {
-    state = {activeBtn: false};
-    handleClick = () => {
+    state = { showMenu: false };
+    toggleMenu = (a) => {
         this.setState({
-            activeBtn: !this.state.activeBtn
+          showMenu: !this.state.showMenu
         })
-    }
+      }
+
     render() {
+        const menuVis = this.state.showMenu ? 'on' : '';
         const data = this.props.data;
         let lists = data.map(v => {
             return (
-                <li key={v.id} className={`list_content ${this.state.activeBtn ? 'on' : ''}`}>
-                    <a href={`/content/${v.id}`} data-id={v.id} onClick={function(e) {
+                <li key={v.id}>
+                    <a href={`/content/${v.id}`} className={`list_content ${menuVis}`} data-id={v.id} onClick={function(e) {
                         e.preventDefault();
-                        this.handleClick();
+                        this.toggleMenu();
                         this.props.onChangePage(e.target.dataset.id);
                     }.bind(this)}>
                         {v.title}

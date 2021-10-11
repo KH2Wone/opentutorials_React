@@ -68,24 +68,18 @@ nav::after { /*header bottom hr*/
 }
 
 .list_content {
-    padding: 8px 13px;
     margin: 3px 5px;
     background: #fff;
     border: 2px solid #DA0037;
     border-radius: 50px;
-}
-
-.list_content a {
     color: #DA0037;
-    width: 100%;
+    padding: 8px 13px;
+    display: block;
 }
 
 /* active button */
 .list_content.on {
     background: #DA0037;
-}
-
-.list_content.on > a {
     color: #fff;
 }
 
